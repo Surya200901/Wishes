@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Prathyusha!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #c79aff, #0f0451);
+            overflow-y: auto;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #ff6b6b;
+            border-radius: 10px;
+            border: 3px solid #fad0c4;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #fff3f3;
+            border-radius: 10px;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            width: 90%;
+            animation: fadeIn 2s ease-in-out;
+            padding-bottom: 50px; /* Padding to ensure content doesn't hide behind the scroll bar */
+        }
+
+        .cake {
+            max-width: 300px;
+            width: 80%;
+            animation: pulse 2s infinite;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            animation: glow 1.5s ease-in-out infinite;
+        }
+
+        .sub-message {
+            
+            font-size: 1.5rem;
+            color: #1cd9df;
+            margin-top: 10px;
+            animation: fadeIn 2s ease-in-out 1s;
+        }
+
+        .teasers {
+            margin-top: 20px;
+            font-size: 1.3rem;
+            color: #fff;
+            text-align: center;
+            animation: slideIn 3s ease-in-out;
+        }
+
+        .teaser {
+            margin: 10px 0;
+            font-style: italic;
+            animation: fadeUp 3s ease-in-out;
+        }
+
+        .confetti {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .confetti span {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%;
+            animation: drop 3s linear infinite;
+        }
+
+        .balloons {
+            position: absolute;
+            bottom: -150px;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .balloon {
+            position: absolute;
+            bottom: 0;
+            width: 50px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50% 50% 0 0;
+            animation: floatUp 7s ease-in-out infinite;
+        }
+
+        .balloon::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            width: 2px;
+            height: 30px;
+            background: #fff;
+            transform: translateX(-50%);
+        }
+
+        .balloon:nth-child(1) { background: #ff6b6b; left: 10%; animation-delay: 0s; }
+        .balloon:nth-child(2) { background: #feca57; left: 30%; animation-delay: 1s; }
+        .balloon:nth-child(3) { background: #1dd1a1; left: 50%; animation-delay: 2s; }
+        .balloon:nth-child(4) { background: #5f27cd; left: 70%; animation-delay: 3s; }
+        .balloon:nth-child(5) { background: #54a0ff; left: 90%; animation-delay: 4s; }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #ff6b6b, 0 0 30px #ff9a9e; }
+            50% { text-shadow: 0 0 20px #fff, 0 0 40px #ff6b6b, 0 0 50px #ff9a9e; }
+        }
+
+        @keyframes drop {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(500px) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateX(-100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes fadeUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0); opacity: 0.9; }
+            50% { transform: translateY(-50vh); opacity: 1; }
+            100% { transform: translateY(-110vh); opacity: 0; }
+        }
+
+        .cake {
+          max-width: 250px; /* Reduced size */
+          width: 70%; /* Adjusted proportionally */
+          margin-bottom: 20px; /* Added space below the cake image */
+      }
+  
+      .surya-prathyusha-image {
+          max-width: 250px; /* Reduced size for the additional image */
+          width: 70%; /* Adjusted proportionally */
+          margin-top: 20px; /* Added space above the image */
+          border-radius: 10px; /* Optional: Rounded corners */
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Subtle shadow */
+      }
+  
+      .container {
+          padding: 20px; /* Increased padding for better spacing */
+      }
+
+      /* Additional styling and animations */
+    .teasers {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .teaser {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        font-size: 1.5rem;
+        color: #fff;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        animation: zoomIn 1.5s ease-in-out, shimmer 2s infinite alternate;
+    }
+
+    .teaser:nth-child(odd) {
+        color: #ffcccb;
+    }
+
+    .teaser:nth-child(even) {
+        color: #b0e0e6;
+    }
+
+    @keyframes zoomIn {
+        0% {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes shimmer {
+        from {
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.4), 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        to {
+            text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 1);
+        }
+    }
+
+    .teaser {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-size: 1.5rem;
+      color: white; /* White color for text */
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+      margin: 10px 0;
+      animation: zoomIn 1.5s ease-in-out, shimmer 2s infinite alternate;
+  }
+  
+  
+  .teaser {
+    color: white;
+}
+
+  .surya-prathyusha-image {
+    max-width: 250px; /* Reduced size for the image */
+    width: 70%; /* Adjusted proportionally */
+    margin-top: 20px; /* Space above the image */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    animation: fadeIn 2s ease-in-out, heartbeat 3s infinite; /* Add fade-in and heartbeat animation */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.cake {
+  max-width: 300px;
+  width: 80%;
+  animation: pulse 2s infinite;
+  margin-bottom: 30px; /* Increased margin for more space */
+}
+.message {
+  margin-bottom: 30px; /* Added margin-bottom to create space below the text */
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  animation: glow 1.5s ease-in-out infinite;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="message">🎂 Happiest Birthday Prathyusha (Mawa) 🎂</div>
+        <img src="https://png.pngtree.com/thumb_back/fw800/background/20240421/pngtree-birthday-cake-with-candles-on-a-yellow-background-image_15717989.jpg" alt="Birthday Cake" class="cake" />
+        <br>
+        <div class="sub-message">With Friendship and LOVE, Surya ❤️</div><br>
+        <img src="images/surya_and_prathyusha.jpg" alt="Surya and Prathyusha" class="surya-prathyusha-image" />
+        <div class="teasers">
+            <div class="teaser">🎉 “May your day be as sweet as your smile!” 🎉</div>
+            <div class="teaser">✨ “Wishing you endless joy, laughter, and cake!” ✨</div>
+            <div class="teaser">🌟 “Another year older, but still shining bright!” 🌟</div>
+            <div class="teaser">🎁 “Here’s to memories made and dreams ahead!” 🎁</div>
+        </div>
+    </div>
+    <div class="confetti" id="confetti"></div>
+    <div class="balloons">
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+    </div>
+
+    <script>
+        // Generate confetti dynamically
+        const confettiContainer = document.getElementById('confetti');
+        for (let i = 0; i < 100; i++) {
+            const confetto = document.createElement('span');
+            confetto.style.left = Math.random() * 100 + '%';
+            confetto.style.backgroundColor = 
+                `hsl(${Math.random() * 360}, 70%, 70%)`;
+            confetto.style.animationDelay = Math.random() * 2 + 's';
+            confettiContainer.appendChild(confetto);
+        }
+    </script>
+</body>
+</html>
